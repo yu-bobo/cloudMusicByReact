@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.play {
+    color: white;
+    width: 100%;
+    height: 700px;
+    background-color: #0b0c11;
+    position: relative;
+}
+
+.play .logo {
+    margin-top: 20px;
+    margin-left: 20px;
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    width: 100px;
+    text-align: center;
+}
+
+.play .logo span img {
+    width: 20px;
+    height: 20px;
+}
+
+.play .circle-warp {
+    width: 100%;
+    height: 400px;
+    background-color: #0b0c11;
+    position: relative;
+
+}
+
+.play .circle-warp .circle-side {
+    position: absolute;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #1a1b20;
+    top: 50%;
+    /*父元素高度的一半*/
+    left: 50%;
+    /*父元素宽度的一半*/
+    margin-left: -150px;
+    /*自己宽度的一半*/
+    margin-top: -150px;
+    /*自己高度的一半*/
+
+}
+
+.play .circle-warp .circle-side .circle-middle {
+    position: absolute;
+    margin: 0 auto;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background-color: #2a2a2a;
+    top: 50%;
+    /*父元素高度的一半*/
+    left: 50%;
+    /*父元素宽度的一半*/
+    margin-left: -140px;
+    /*自己宽度的一半*/
+    margin-top: -140px;
+    /*自己高度的一半*/
+}
+
+.play .circle-warp .circle-side .circle-middle .circle-enter {
+    position: absolute;
+    margin: 0 auto;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background-color: #0b0c11;
+    top: 50%;
+    /*父元素高度的一半*/
+    left: 50%;
+    /*父元素宽度的一半*/
+    margin-left: -105px;
+    /*自己宽度的一半*/
+    margin-top: -105px;
+    /*自己高度的一半*/
+}
+
+.play .circle-warp .circle-side .circle-middle .circle-enter .song-img {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #0b0c11;
+    top: 50%;
+    /*父元素高度的一半*/
+    left: 50%;
+    /*父元素宽度的一半*/
+    margin-left: -100px;
+    /*自己宽度的一半*/
+    margin-top: -100px;
+    /*自己高度的一半*/
+   
+}
+
+.play .circle-warp .circle-side .circle-middle .circle-enter .song-img img {
+    position: absolute;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    /*父元素高度的一半*/
+    left: 50%;
+    /*父元素宽度的一半*/
+    margin-left: -100px;
+    /*自己宽度的一半*/
+    margin-top: -100px;
+    animation: rotate 10s linear infinite;
+}
+
+.play .circle-warp .circle-side .circle-middle .circle-enter .playbutton {
+    position: absolute;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    /*父元素高度的一半*/
+    left: 50%;
+    /*父元素宽度的一半*/
+    margin-left: -25px;
+    /*自己宽度的一半*/
+    margin-top: -25px;  
+}
+.play .circle-warp .circle-side .circle-middle .circle-enter .playbutton img{
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}

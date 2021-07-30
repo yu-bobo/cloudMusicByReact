@@ -1,0 +1,114 @@
+.playlist{
+    width: 100%;
+}
+.playlist .recommand{
+    width: 100%;
+}
+.recommand h2{   
+    position: relative;
+    padding-left: 9px;
+    margin-bottom: 14px;
+    border-left: 2px solid #dd001b;
+    font-size: 17px;
+    height: 20px;
+    line-height: 20px;
+}
+/* 推荐歌单 */
+.recommand .content-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.recommand .content-box .content{
+    width: 33.33%;
+    padding:0 3px;
+}
+.recommand .content-box .content div{
+    position: relative;
+    width: 100%;
+    height: 110px;
+}
+.recommand .content-box .content div img{
+    position: absolute;
+    width: 100%;
+}
+.recommand .content-box .content div span{
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    z-index: 3;
+    padding-left: 13px;
+    color: #fff;
+    font-size: 12px;
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: 11px 10px;
+    text-shadow: 1px 0 0 rgba(0,0,0,.15)
+}
+.recommand .content-box .content p{
+    position: relative;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding: 10px 2px 0 10px;
+    min-height: 30px;
+    line-height: 1.2;
+    font-size: 13px;
+}
+/* 最新音乐 */
+.populMusic-box{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.populMusic-box .populMusic{
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    line-height: 20px;
+    padding:5px 0 ;
+}
+.populMusic-box .populMusic .music-info .music-detail{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+    font-family: Microsoft YaHei;
+    font-size: 17px;
+    font-weight: 500;
+    width: 324px;
+    
+}
+.populMusic-box .populMusic .music-info .music-detail span{
+    color: #888;
+    margin-left: 4px;
+    font-family: Helvetica, sans-serif, STHeiTi;
+}
+.populMusic-box .populMusic .music-info .music-author{
+    font-size: 12px;
+    color: #888;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 324px;
+    
+}
+.populMusic-box .populMusic .music-info .music-author i{
+    margin-right:5px ;
+    font-size: 10px;
+    font-weight: 500px;
+    color: orange;
+    border: 1px solid orange;
+}
+.populMusic-box .populMusic .music-play{
+    width: 30px;
+    height: 30px;
+    margin-top: 6px;
+}
+.footer{
+    width: 375px;
+}
+.footer img{
+    width: 100%;
+}
