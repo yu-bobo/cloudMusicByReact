@@ -20,7 +20,32 @@ class Song extends React.Component {
             MusicUrl: '',
             play: playimg,
             stop: true,
-            musicID: 0
+            musicID: 0,//歌曲id
+            jumpChart: [
+                {
+                    color: '#03a9f4',
+                    height: 120
+                },
+                {
+                    color: '#8a4af3',
+                    height: 80
+                },
+                {
+                    color: '#f34a5e',
+                    height: 60
+                },
+                {
+                    color: '#f38b4a',
+                    height: 100
+                }, {
+                    color: '#ffeb3b',
+                    height: 100
+                }, {
+                    color: '#4af38b',
+                    height: 150
+                },
+
+            ],//跳动图
         }
         //设置ref
         this.musicRef = React.createRef();
@@ -39,6 +64,7 @@ class Song extends React.Component {
                 )
             }
         )
+        this.setRandomHeight()
     }
 
     //控制音乐播放和暂停
@@ -87,7 +113,26 @@ class Song extends React.Component {
         this.musicRef.current.play();//播放
     }
 
+    //定时器随机生成高度
+    setRandomHeight() {
+        setInterval(() => {
+            this.state.jumpChart.map((item, index) => {
+                let {jumpChart} = {...this.state}
+                jumpChart[index].height = Math.floor(Math.random() * 200)
+                this.setState({
+                    jumpChart: jumpChart,
+                })
+            })
+        }, 500)
+    }
+
     render() {
+        let jumpChartList = this.state.jumpChart
+        let jumpChart = jumpChartList.map((item, index) => {
+            return (
+                <span key={index} style={{height: `${item.height}` + 'px', backgroundColor: `${item.color}`}}></span>
+            )
+        })
         //console.log(this.animationRef)
         //consoleconsole.log(JSON.parse(localStorage.getItem('picUrl')))
         return (
@@ -113,11 +158,16 @@ class Song extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className='changMusic'>
+                <div className='changeMusic'>
                     <span onClick={this.changMusic.bind(this, 'up')}><FastBackwardOutlined/></span>
                     <span onClick={this.musicPlay.bind(this)}>
                         {this.state.stop ? (<PlayCircleOutlined/>) : (<PauseCircleOutlined/>)}</span>
                     <span onClick={this.changMusic.bind(this, 'next')}><FastForwardOutlined/></span>
+                </div>
+                <div className="jumpChart">
+                    {
+                        jumpChart
+                    }
                 </div>
                 <audio ref={this.musicRef} src={this.state.MusicUrl}></audio>
             </div>

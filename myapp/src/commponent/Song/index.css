@@ -159,11 +159,24 @@
     }
 }
 
-.play .changMusic {
+.play .changeMusic {
     margin: 0 auto;
     text-align: center;
     display: flex;
     justify-content: space-around;
     width: 60%;
     font-size: 40px;
+}
+.play .jumpChart{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.play .jumpChart span{
+    width: 20px;
+    height: 100px;
+    background-color: darkorange;
+    transition: all .5s ease-in-out;
 }
