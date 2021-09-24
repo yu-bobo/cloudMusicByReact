@@ -96,7 +96,7 @@ class PlayList extends React.Component {
                     </div>
                 </div>
                 <div className='footer'>
-                    <img src={footerImg}></img>
+                    <img src={footerImg} title={'图是截的，不为别的，就因为我懒 ^_^！'}></img>
                 </div>
             </div>
         )

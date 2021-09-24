@@ -149,10 +149,10 @@ class Song extends React.Component {
                 },
 
             ],//跳动图
+            jumpInterVal: 0,
         }
         //设置ref
         this.musicRef = React.createRef();
-        this.animationRef = React.createRef();
     }
 
     componentDidMount() {
@@ -167,7 +167,7 @@ class Song extends React.Component {
                 )
             }
         )
-        this.setRandomHeight()
+        //水晶音波
         const canvas = document.getElementById('background');
         canvas.width = canvas.height = 400
         const scene = new Scene(canvas);
@@ -179,12 +179,23 @@ class Song extends React.Component {
         if (this.musicRef.current !== null) {
             //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
             if (this.musicRef.current.paused) {
+                if (!this.state.jumpInterVal) {
+                    //播放打开jumpChart
+                    this.setRandomHeight()
+                }
                 this.musicRef.current.play();//audio.play();// 这个就是播放 
                 this.setState({
                     play: stopimg,
                     stop: false,
                 })
             } else {
+                if (this.state.jumpInterVal) {
+                    //暂停关闭jumpChart
+                    clearInterval(this.state.jumpInterVal)
+                    this.setState({
+                        jumpInterVal: 0,
+                    })
+                }
                 this.musicRef.current.pause();// 这个就是暂停
                 this.setState({
                     play: playimg,
@@ -222,15 +233,17 @@ class Song extends React.Component {
 
     //定时器随机生成高度
     setRandomHeight() {
-        setInterval(() => {
-            this.state.jumpChart.map((item, index) => {
-                let {jumpChart} = {...this.state}
-                jumpChart[index].height = Math.floor(Math.random() * 200)
-                this.setState({
-                    jumpChart: jumpChart,
+        this.setState({
+            jumpInterVal: setInterval(() => {
+                this.state.jumpChart.map((item, index) => {
+                    let {jumpChart} = {...this.state}
+                    jumpChart[index].height = Math.floor(Math.random() * 200)
+                    this.setState({
+                        jumpChart: jumpChart,
+                    })
                 })
-            })
-        }, 500)
+            }, 500)
+        })
     }
 
     render() {
@@ -240,8 +253,6 @@ class Song extends React.Component {
                 <span key={index} style={{height: `${item.height}` + 'px', backgroundColor: `${item.color}`}}></span>
             )
         })
-        //console.log(this.animationRef)
-        //consoleconsole.log(JSON.parse(localStorage.getItem('picUrl')))
         return (
             <div className='play'>
                 <div className='logo'>
@@ -253,7 +264,7 @@ class Song extends React.Component {
                 <div className='circle-warp'>
                     <canvas id="background">水晶音波</canvas>
                     <div className='circle-side'>
-                        <img className='circle-img' ref={this.animationRef}
+                        <img className='circle-img'
                              src={JSON.parse(localStorage.getItem('picUrl'))}
                              alt="play"/>
                     </div>

@@ -1,7 +1,36 @@
 .App {
-  text-align: center;
-  color:red;
-  font-size:45px;
+    text-align: center;
+    color: red;
+    font-size: 45px;
+}
+
+.content .top {
+    background-color: RGB(212, 59, 51);
+    width: 100%;
+    height: 85px;
+}
+
+.content .top .content-box {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.content .top .content-box div {
+    height: 36px;
+    text-align: center;
+    color: #eeeff0;
+    font-size: 18px;
+    line-height: 36px;
+}
+
+.content .top .content-box div:last-child {
+    background-color: #fff;
+    border-radius: 25px;
+    width: 100px;
+    color: RGB(212, 59, 51);
 }
 
 

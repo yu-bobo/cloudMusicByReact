@@ -67,7 +67,7 @@
     width: 100%;
     height: 100%;
     filter: blur(15px); /* 30px */
-    background-image: radial-gradient(white, silver);
+    background-image: radial-gradient(white, whitesmoke);
 }
 
 .play .circle-warp .circle-side .circle-img {
