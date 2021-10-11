@@ -1,0 +1,41 @@
+.hotMusic {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.hotMusic .hotTop {
+    position: relative;
+    padding-top: 38.9%;
+    overflow: hidden;
+    background: url(//s3.music.126.net/mobile-new/img/hot_music_bg_2x.jpg?f01a252389c26bcf016816242eaa6aee=) no-repeat;
+    background-size: contain;
+}
+
+.hotMusic .hotTop .hotPic {
+    position: absolute;
+    top: 0;
+    display: flex;
+    padding-left: 20px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hotMusic .hotTop .hotPic .hotSp {
+    display: block;
+    width: 142px;
+    height: 67px;
+    background: url(//s3.music.126.net/mobile-new/img/index_icon_2x.png?5207a28c3767992ca4bb6d4887c74880=) no-repeat;
+    background-size: 166px 97px;
+    background-position: -24px -30px;
+}
+.hotMusic .hotTop .hotPic .hotTime{
+    padding-top: 5px;
+    font-size: 10px;
+    line-height: 20px;
+    color: white;
+}
+

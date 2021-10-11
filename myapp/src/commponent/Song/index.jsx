@@ -250,7 +250,7 @@ class Song extends React.Component {
         let jumpChartList = this.state.jumpChart
         let jumpChart = jumpChartList.map((item, index) => {
             return (
-                <span key={index} style={{height: `${item.height}` + 'px', backgroundColor: `${item.color}`}}></span>
+                <span key={index} style={{height: `${item.height}` + 'px', backgroundColor: `${item.color}`}}/>
             )
         })
         return (
@@ -280,7 +280,7 @@ class Song extends React.Component {
                         jumpChart
                     }
                 </div>
-                <audio ref={this.musicRef} src={this.state.MusicUrl}></audio>
+                <audio ref={this.musicRef} src={this.state.MusicUrl}/>
             </div>
         )
     }

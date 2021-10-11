@@ -1,4 +1,5 @@
 .am-tabs-default-bar-tab-active{color:#dd001b}
+.am-tabs-default-bar-underline{border: 1px #dd001b solid;}
 .top{
   width:100%;
 }

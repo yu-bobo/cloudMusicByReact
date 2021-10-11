@@ -2,6 +2,7 @@ import React from 'react';
 import { Tabs  } from 'antd-mobile';
 import './reset.css'
 import PlayList from '../Playlist/index'
+import TopMusic from '../HotMusic/index'
 const tabs = [
   { title: '推荐音乐' },
   { title: '热歌榜' },
@@ -17,7 +18,7 @@ export default class TxTabs extends React.Component {
            {<PlayList/>}
       </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '250px', backgroundColor: '#fff' }}>
-            Content of second tab
+            {<TopMusic/>}
       </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '250px', backgroundColor: '#fff' }}>
             Content of third tab

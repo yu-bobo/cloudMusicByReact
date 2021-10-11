@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 .content .top .content-box div {
@@ -24,6 +24,11 @@
     color: #eeeff0;
     font-size: 18px;
     line-height: 36px;
+}
+.content .top .content-box div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .content .top .content-box div:last-child {

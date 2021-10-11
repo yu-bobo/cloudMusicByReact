@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import TxTabs from './commponent/Tabs'
-import couldMusic from './assets/images/couldMusic.png'
+import logo from '@/assets/images/logo.png'
 
 function App() {
     return (
@@ -9,11 +9,11 @@ function App() {
         <div className='content'>
             <div className='top'>
                 <div className='content-box'>
-                    <div>网 抑 云 音 乐</div>
+                    <div><img src={logo} style={{width: '30px', height: '30px',}}/><p>网 抑 云 音 乐</p></div>
                     <div>下载APP</div>
                 </div>
             </div>
-            <TxTabs></TxTabs>
+            <TxTabs/>
         </div>
     );
 }
