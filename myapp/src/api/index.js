@@ -15,3 +15,6 @@ export const getPlaylistCmt = (id) => axios.get(`http://chst.vip:666/comment/pla
 //获取音乐播放地址
 
 export const getMusicurl = (id) => axios.get(`http://chst.vip:666/song/url?id=${id}`)
+
+//获取热门搜索
+export const getHotSearch = () => axios.get(`http://chst.vip:666/search/hot`)

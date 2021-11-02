@@ -1,68 +1,67 @@
 import React from 'react'
 import './index.css'
 import {withRouter} from "react-router-dom"
+import {getHotSearch} from "@/api/index.js"
 
 @withRouter
 class SearchMusic extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            hotSearchList: [{
-                musicID: 0,
-                name: '夏天的秘密',
-            }, {
-                musicID: 1,
-                name: '漠河舞厅',
-            }, {
-                musicID: 2,
-                name: '浪漫主义',
-            }, {
-                musicID: 3,
-                name: '魔力红--five',
-            }, {
-                musicID: 4,
-                name: '生活在别处的你',
-            }, {
-                musicID: 5,
-                name: '毛不易',
-            }, {
-                musicID: 6,
-                name: '哪里都是你',
-            }, {
-                musicID: 7,
-                name: '梦特别娇',
-            }],
-            historySearchList: [{
-                historyName: '东北民谣',
-                id: 1,
-            },{
-                historyName: '孤独的北京',
-                id: 2,
-            },{
-                historyName: '我最亲爱的你',
-                id: 3,
-            }],
+            hotSearchList: [],
+            historySearchList: JSON.parse(localStorage.getItem('cm_search_history')) ? JSON.parse(localStorage.getItem('cm_search_history')) : [],//获取历史搜索记录
         }
     }
 
     componentDidMount() {
+        //获取热搜列表
+        getHotSearch().then(res => {
+            this.setState({
+                hotSearchList: res.data.result.hots || []
+            })
+        })
+    }
 
+    //搜索
+    doSearch(item) {
+        this.setState({
+            historySearchList: [...this.state.historySearchList, item]
+        }, () => {
+            this.setLocalStorageByHistory()
+        })
+
+    }
+
+    //删除历史记录
+    removeHistorySearch(index) {
+        let historySearchList = [...this.state.historySearchList]
+        historySearchList.splice(index, 1)
+        this.setState({
+            historySearchList: historySearchList
+        }, () => {
+            this.setLocalStorageByHistory()
+        })
+    }
+
+    //存储历史搜索条件到localStorage
+    setLocalStorageByHistory() {
+        localStorage.setItem('cm_search_history', JSON.stringify(this.state.historySearchList))
     }
 
     render() {
         let hotSearchList = this.state.hotSearchList.map((item) => {
             return (
-                <li key={item.musicID}> {item.name}</li>
+                <li key={item.second + Math.random()} onClick={this.doSearch.bind(this, item)}> {item.first}</li>
             )
         })
-        let historySearchList = this.state.historySearchList.map((item) => {
+        let historySearchList = this.state.historySearchList.map((item, index) => {
             return (
-                <li key={item.id}>
-                    <i></i>
+                <li key={item.second + Math.random()}>
+                    <i/>
                     <div className='history-content'>
-                        <span>{item.historyName}</span>
+                        <span>{item.first}</span>
                         <figure>
-                            <i></i>
+                            <i onClick={this.removeHistorySearch.bind(this, index)}/>
                         </figure>
                     </div>
                 </li>
