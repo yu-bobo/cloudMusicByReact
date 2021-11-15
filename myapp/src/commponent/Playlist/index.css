@@ -60,55 +60,6 @@
     line-height: 1.2;
     font-size: 13px;
 }
-/* 最新音乐 */
-.populMusic-box{
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.populMusic-box .populMusic{
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    line-height: 20px;
-    padding:5px 0 ;
-}
-.populMusic-box .populMusic .music-info .music-detail{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    word-break: normal;
-    font-family: Microsoft YaHei;
-    font-size: 17px;
-    font-weight: 500;
-    width: 324px;
-    
-}
-.populMusic-box .populMusic .music-info .music-detail span{
-    color: #888;
-    margin-left: 4px;
-    font-family: Helvetica, sans-serif, STHeiTi;
-}
-.populMusic-box .populMusic .music-info .music-author{
-    font-size: 12px;
-    color: #888;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 324px;
-    
-}
-.populMusic-box .populMusic .music-info .music-author i{
-    margin-right:5px ;
-    font-size: 10px;
-    font-weight: 500px;
-    color: orange;
-    border: 1px solid orange;
-}
-.populMusic-box .populMusic .music-play{
-    width: 30px;
-    height: 30px;
-    margin-top: 6px;
-}
 .footer{
     width: 375px;
 }
