@@ -11,11 +11,11 @@ switch (env) {
         break
     //产品模式
     case "production":
-        axios.defaults.baseURL = "/api";//当为产品模式重新配置服务器代理
+        axios.defaults.baseURL = "http://chst.vip:666";//当为产品模式重新配置服务器代理
         break
     //测试模式
     case "test":
-        axios.defaults.baseURL = "xxx.xxx.xx";
+        axios.defaults.baseURL = "/api";
         break
 }
 //设置请求时间最长七秒
