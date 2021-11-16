@@ -162,7 +162,7 @@ class Song extends React.Component {
             res => {
                 this.setState(
                     {
-                        MusicUrl: res.data.data[0].url//=音乐播放地址
+                        MusicUrl: res.data[0].url//=音乐播放地址
                     }
                 )
             }
@@ -222,7 +222,7 @@ class Song extends React.Component {
             res => {
                 this.setState(
                     {
-                        MusicUrl: res.data.data[0].url//=音乐播放地址
+                        MusicUrl: res.data[0].url//=音乐播放地址
                     }
                 )
             }

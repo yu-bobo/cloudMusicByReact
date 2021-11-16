@@ -29,7 +29,7 @@ class HotMusic extends React.Component {
                     </div>
                 </div>
                 <div>
-                    {<HotSongList/>}
+                    {<HotSongList type='hotMusic'/>}
                 </div>
             </div>
         )

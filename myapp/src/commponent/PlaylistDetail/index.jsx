@@ -21,11 +21,11 @@ class PlaylistDetail extends React.Component {
         //发歌单详情请求
         getPlaylistDetail(playlistId.id).then(
             res => {
-                //console.log(res.data.playlist.creator.avatarUrl)
+                //console.log(res.playlist.creator.avatarUrl)
                 this.setState({
-                    detail: res.data.playlist,
-                    creator: res.data.playlist.creator,
-                    tracks: res.data.playlist.tracks
+                    detail: res.playlist,
+                    creator: res.playlist.creator,
+                    tracks: res.playlist.tracks
                 }
                 )
             })
@@ -33,7 +33,7 @@ class PlaylistDetail extends React.Component {
         //发歌单评论请求
         getPlaylistCmt(playlistId.id).then(res => {
             this.setState({
-                comment: res.data.comments
+                comment: res.comments
             })
         })
     }

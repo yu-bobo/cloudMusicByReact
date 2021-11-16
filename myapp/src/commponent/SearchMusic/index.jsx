@@ -17,7 +17,7 @@ class SearchMusic extends React.Component {
         //获取热搜列表
         getHotSearch().then(res => {
             this.setState({
-                hotSearchList: res.data.result.hots || []
+                hotSearchList: res.result.hots || []
             })
         })
     }

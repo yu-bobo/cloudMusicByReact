@@ -18,7 +18,7 @@ class SongList extends React.Component {
         //获取推荐新歌
         getRmdnewsong().then(res => {
             this.setState({
-                songList: res.data.result
+                songList: res.result
             })
         })
         let data = {
@@ -26,9 +26,9 @@ class SongList extends React.Component {
             encSecKey: 'acc3a2e3f099e7245706050906c82cefe8fc4f9d454d66925744d4dce8218315c77dceb2ebe22739b61b05585168fb690e26203295bbf1952e79982eff682a9cfe70172a889a6a5a6aa688e1214113cbe7c222d5f3226551d0f42dc76751a62375d18a84909951c4ac3741f5e2016032b5f2897c0e535ac30d88a95d474fd6b8',
         }
         //获取热歌排行
-        getHotSongList(data).then(res => {
-            console.log(res)
-        })
+        // getHotSongList(data).then(res => {
+        //     console.log(res)
+        // })
     }
 
     //歌单详情
@@ -46,25 +46,30 @@ class SongList extends React.Component {
     render() {
         //推荐新歌元素变量
         let newsongArr = this.state.songList
-        let songList = newsongArr.map(item => {
+        let songList = newsongArr.map((item, index) => {
             return (
                 <div className='populMusic' key={item.id}>
-                    <div className='music-info'>
-                        <div className='music-detail'>
-                            {item.name}
-                            <span>{item.song.alias.length > 0 ? `(${item.song.alias})` : ''}</span>
+                    {this.props.type === 'hotMusic' ? <div className='music-rank'>
+                        {Number(index + 1) < 10 ? '0' + (index + 1) : (index + 1)}</div> : ''}
+                    <div className='music-box'>
+                        <div className='music-info'>
+                            <div className='music-detail'>
+                                {item.name}
+                                <span>{item.song.alias.length > 0 ? `(${item.song.alias})` : ''}</span>
+                            </div>
+                            <div className='music-author'>
+                                <i>{item.song.album.subType.length > 1 ? 'SQ' : ''}</i>
+                                {item.song.artists[0].name}-{item.song.name}
+                            </div>
                         </div>
-                        <div className='music-author'>
-                            <i>{item.song.album.subType.length > 1 ? 'SQ' : ''}</i>
-                            {item.song.artists[0].name}-{item.song.name}
+                        <div className='music-play' onClick={this.goSong.bind(this, item.id, item.picUrl)}>
+                            <img src={play} alt=""/>
                         </div>
-                    </div>
-                    <div className='music-play' onClick={this.goSong.bind(this, item.id, item.picUrl)}>
-                        <img src={play} alt=""/>
                     </div>
                 </div>
             )
         })
+
         return (
             <div className='populMusic-box'>
                 {songList}

@@ -1,17 +1,50 @@
-
 /* 最新音乐 */
-.populMusic-box{
+.populMusic-box {
     padding-left: 10px;
     padding-right: 10px;
 }
-.populMusic-box .populMusic{
+
+.populMusic-box .populMusic {
+    align-items: center;
+    display: flex;
+}
+
+.populMusic-box .populMusic .music-rank {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 40px;
+    text-align: center;
+    font: 17px/1.5 Helvetica, sans-serif, STHeiTi;
+    font-weight: 100;
+    margin-left: -10px;
+}
+
+.populMusic-box .populMusic .music-rank:nth-child(-n + 3) {
+    color: #df3436;
+}
+
+.populMusic-box .populMusic .music-box {
     border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     line-height: 20px;
-    padding:5px 0 ;
+    padding: 5px 0;
+    width: 0;
+    flex: 1;
 }
-.populMusic-box .populMusic .music-info .music-detail{
+
+.populMusic-box .populMusic .music-box .music-info {
+    flex: 1;
+    width: 0;
+}
+
+.populMusic-box .populMusic .music-box .music-info .music-detail {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -19,31 +52,33 @@
     font-family: Microsoft YaHei;
     font-size: 17px;
     font-weight: 500;
-    width: 324px;
 
 }
-.populMusic-box .populMusic .music-info .music-detail span{
+
+.populMusic-box .populMusic .music-box .music-info .music-detail span {
     color: #888;
     margin-left: 4px;
     font-family: Helvetica, sans-serif, STHeiTi;
 }
-.populMusic-box .populMusic .music-info .music-author{
+
+.populMusic-box .populMusic .music-box .music-info .music-author {
     font-size: 12px;
     color: #888;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 324px;
 
 }
-.populMusic-box .populMusic .music-info .music-author i{
-    margin-right:5px ;
+
+.populMusic-box .populMusic .music-box .music-info .music-author i {
+    margin-right: 5px;
     font-size: 10px;
     font-weight: 500px;
     color: orange;
     border: 1px solid orange;
 }
-.populMusic-box .populMusic .music-play{
+
+.populMusic-box .populMusic .music-box .music-play {
     width: 30px;
     height: 30px;
     margin-top: 6px;

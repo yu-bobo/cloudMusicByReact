@@ -17,9 +17,9 @@ class PlayList extends React.Component {
     componentDidMount() {
         //获取推荐歌单
         getRmdplaylist().then(res => {
-            //console.log(res.data.result)
+            //console.log(res.result)
             this.setState({
-                Rmdplaylist: res.data.result
+                Rmdplaylist: res.result
             })
 
         })
@@ -53,7 +53,7 @@ class PlayList extends React.Component {
                     </div>
                     <h2>最新音乐</h2>
                     <div>
-                        {<NewSongList/>}
+                        {<NewSongList type='playList'/>}
                     </div>
                 </div>
                 <div className='footer'>

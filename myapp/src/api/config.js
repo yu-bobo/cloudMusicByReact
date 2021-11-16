@@ -48,7 +48,7 @@ axios.interceptors.response.use(
         // config.custom 自定义处理
         const {data = {}, config = {}, status} = response
         if (data.code === 200) {
-            return response
+            return data
         } else {
             return Promise.reject({"status": response.status, "message": MESSAGE[response.status]})
         }

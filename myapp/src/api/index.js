@@ -20,5 +20,4 @@ export const getMusicurl = (id) => axios.get(`/song/url?id=${id}`)
 export const getHotSearch = () => axios.get(`/search/hot`)
 
 //获取热门歌曲
-export const getHotSongList = (data) => axios.post(`/playlist/detail`, data, {formData: true,}
-)
+export const getHotSongList = (data) => axios.get(`/playlist/detail`)
