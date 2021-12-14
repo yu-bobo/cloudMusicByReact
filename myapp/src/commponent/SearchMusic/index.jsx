@@ -10,6 +10,7 @@ class SearchMusic extends React.Component {
         this.state = {
             hotSearchList: [],
             historySearchList: JSON.parse(localStorage.getItem('cm_search_history')) ? JSON.parse(localStorage.getItem('cm_search_history')) : [],//获取历史搜索记录
+            inputValue: '',
         }
     }
 
@@ -48,6 +49,13 @@ class SearchMusic extends React.Component {
         localStorage.setItem('cm_search_history', JSON.stringify(this.state.historySearchList))
     }
 
+    //处理输入
+    dealInput(e) {
+        this.setState({
+            inputValue: e.target.value,
+        })
+    }
+
     render() {
         let hotSearchList = this.state.hotSearchList.map((item) => {
             return (
@@ -72,8 +80,10 @@ class SearchMusic extends React.Component {
                 <div className='search-input'>
                     <div className='input-cover'>
                         <i className='search-icon'/>
-                        <input/>
-                        <label className="holder">搜索歌曲、歌手、专辑</label>
+                        <input onInput={(e) => {
+                            this.dealInput(e)
+                        }}/>
+                        <label className="holder">{this.state.inputValue ? '' : '搜索歌曲、歌手、专辑'}</label>
                     </div>
                 </div>
                 <section className='hot-list'>
