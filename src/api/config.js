@@ -11,7 +11,7 @@ switch (env) {
         break
     //产品模式
     case "production":
-        axios.defaults.baseURL = "http://150.158.185.32:4000";//当为生产模式重新配置服务器代理
+        axios.defaults.baseURL = "http://150.158.185.32/mua";//当为生产模式重新配置服务器代理
         break
     //测试模式
     case "test":
