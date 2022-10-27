@@ -183,7 +183,7 @@ class Song extends React.Component {
                     //播放打开jumpChart
                     this.setRandomHeight()
                 }
-                this.musicRef.current.play();//audio.play();// 这个就是播放 
+                this.musicRef.current.play();//audio.play();// 这个就是播放
                 this.setState({
                     play: stopimg,
                     stop: false,
@@ -257,7 +257,7 @@ class Song extends React.Component {
             <div className='play'>
                 <div className='logo'>
                     <span>
-                        <img src="http://p3.music.126.net/JpFxnadS71uHPvNhjunCfQ==/109951163421187972.png" alt=""/>
+                        <img src="https://p3.music.126.net/JpFxnadS71uHPvNhjunCfQ==/109951163421187972.png" alt=""/>
                     </span>
                     <span>网抑云音乐</span>
                 </div>
